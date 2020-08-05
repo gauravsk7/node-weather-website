@@ -11,7 +11,8 @@ const forecast=(latitude,longitude,callback)=>{
         } else{
             const temp=currently.temperature        //Here response.body is already parsed ie it is an object
             const rainChance=(currently.precipProbability)*100
-            callback(undefined,daily.data[0].summary+" It is "+temp+" degree C outside. There is a "+rainChance+"% chance of rainfall.")
+            callback(undefined, daily.data[0].summary+" It is "+temp+" degree C outside. There is a "+rainChance
+            +"% chance of rainfall. Maximum temperature is "+daily.data[0].temperatureHigh+" degree C and minimum temperature is "+daily.data[0].temperatureLow+" degree C.")
         }
     })
 }
