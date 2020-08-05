@@ -25,7 +25,8 @@ weatherForm.addEventListener('submit', (e)=>{          //e stands for event
     const address=(location)=>{
         return location.replace(' ','%20')
     }
-    const url='http://localhost:3000/weather?address='+address(location)
+//    const url='http://localhost:3000/weather?address='+address(location)
+    const url='/weather?address='+address(location)   //after using heroku
     fetch(url).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
